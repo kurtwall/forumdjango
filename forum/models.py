@@ -7,6 +7,7 @@ class Post(models.Model):
     body = models.TextField(blank=True, null=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, blank=True, null=True, on_delete=models.CASCADE,
                              related_name="posts")
+    created_at = models.DateTimeField(null=True, auto_now_add=True)
 
 
 class Comment(models.Model):
@@ -14,3 +15,4 @@ class Comment(models.Model):
                              related_name="comments")
     post = models.ForeignKey(Post, blank=True, null=True, on_delete=models.CASCADE, related_name="comments")
     body = models.TextField(blank=True, null=True)
+    created_at = models.DateTimeField(null=True, auto_now_add=True)

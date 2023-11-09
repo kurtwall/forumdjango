@@ -1,3 +1,7 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+class UrlsTest(TestCase):
+
+    def test_placeholder(self):
+        pass
